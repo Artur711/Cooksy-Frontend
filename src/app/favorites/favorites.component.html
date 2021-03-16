@@ -1,0 +1,20 @@
+<div *ngIf="favorites.length != 0">
+  <div class="col-1-4 d-flex important! justify-content-center flex-wrap">
+    <a *ngFor="let favorite of favorites | paginate: { id: 'listing_pagination',
+    itemsPerPage: 10,
+    currentPage: page,
+    totalItems: totalRecords }"
+       routerLink="detail/{{favorite.recipe.recipeId}}">
+      <div class="bg-style item m-2">
+        <img class="img-thumbnail d-block m-auto" src="{{favorite.recipe.image}}" alt="Recipe">
+        <span><strong class="text-white">{{favorite.recipe.tittle}}</strong></span>
+      </div>
+    </a>
+  </div>
+  <div class="row justify-content-center my-3">
+    <pagination-controls id="listing_pagination" (pageChange)="page = $event"></pagination-controls>
+  </div>
+</div>
+<div *ngIf="favorites.length == 0" class="bg-style mt-5 ml-5">
+    <h2 class="mt-5 mx-5 p-1 p-sm-3">Your favorite recipes list is empty.</h2>
+</div>

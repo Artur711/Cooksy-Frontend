@@ -1,0 +1,16 @@
+.bg-style {
+  background: rgba(207, 36, 10, 0.55);
+  color: white;
+}
+
+.img-border {
+  border: 3px solid #790707;
+}
+
+.custom-control:hover {
+  background-color: #4E2F2F;
+}
+
+.sum {
+  border-top: white solid 2px;
+}

@@ -1,0 +1,50 @@
+.bg-style {
+  background: rgba(207, 36, 10, 0.55);
+  color: white;
+}
+
+strong {
+  font-style: italic;
+}
+
+#listing_pagination /deep/ .ngx-pagination .current {
+  background: rgba(207, 36, 10, 0.75);
+}
+
+.bg-green {
+  background-color: #2E9000;
+  border: 2px solid #1F7A08;
+}
+
+.image-large {
+  width: auto;
+  height: auto;
+  max-height: 16vw;
+  max-width: 16vw;
+}
+
+.modal-content {
+  width: 70%;
+}
+
+.modal {
+  margin-top: 25vh;
+}
+
+@media screen and (max-width: 991px) {
+  .image-large {
+    max-height: 60vw;
+    max-width: 60vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .image-large {
+    max-height: 70vw;
+    max-width: 70vw;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}

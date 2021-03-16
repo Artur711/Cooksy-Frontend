@@ -1,0 +1,22 @@
+.bg-style {
+  background: rgba(207, 36, 10, 0.55);
+  color: white;
+}
+
+#listing_pagination /deep/ .ngx-pagination .current {
+  background: rgba(207, 36, 10, 0.75);
+}
+
+.pagination {
+  background-color: snow;
+}
+
+ngx-pagination a {
+  color: snow !important;
+}
+
+@media screen and (max-width: 575px) {
+  h5, .h5, span {
+    font-size: 80%;
+  }
+}

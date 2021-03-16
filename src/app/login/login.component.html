@@ -1,0 +1,33 @@
+<div class="limiter">
+  <div class="container-login">
+    <div class="wrap-login pt-0">
+
+      <button class="button float-right" (click)="goBack()">
+        <img src="assets/image/Icon/baseline_reply_white_18dp.png" alt="Arrow">
+      </button>
+
+      <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()" >
+
+          <img class="img-fluid d-block mx-auto pl-5" src="../assets/logo2.png" alt="logo">
+          <span class="login-form-title ml-2 mb-5 text-white ">Cooksy</span>
+
+        <mat-form-field class="wrap-input">
+          <input matInput class="input" type="text" id="username" placeholder="Username" autocomplete="off" formControlName="username" required>
+        </mat-form-field>
+
+        <mat-form-field class="wrap-input">
+          <input matInput class="input" type="password" id="password" placeholder="Password" formControlName="password" required>
+        </mat-form-field>
+
+
+          <div class="wrap-login-form-btn">
+            <div class="login-form-bgbtn"></div>
+            <button class="login-form-btn" mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">LOG IN</button>
+          </div>
+      </form>
+
+
+    </div>
+  </div>
+</div>
+

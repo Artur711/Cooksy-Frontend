@@ -1,0 +1,59 @@
+<div class="d-flex justify-content-around flex-wrap">
+  <div class="dropdown mt-2">
+    <img class="dropdown-toggle bg-orange" src="assets/image/Icon/dish.png" (click)="collapsed()"
+         [attr.aria-expanded]="!isCollapsed" aria-controls="dropdown" alt="Search">
+
+    <div class="dropdown-menu bg-style" id="dropdown" [ngbCollapse]="isCollapsed">
+      <div *ngFor="let type of types">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input mx-1" id="{{type.name}}" [(ngModel)]="type.isChecked">
+          <label class="custom-control-label" for="{{type.name}}">{{type.name}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="bg-style-2 col-12 col-md-6 col-xl-4 mt-2">
+    <label class="mr-2" for="search-ingredient">Ingredient</label>
+    <input class="mt-1 col-5" #searchIngredient id="search-ingredient"/>
+    <button class="ml-2 bg-green text-white"
+            (click)="addIngredient(searchIngredient.value); searchIngredient.value = ''">Add</button>
+  </h3>
+
+  <h3 class="bg-style-2 col-12 col-md-6 col-xl-4 mt-2">
+    <label class="mr-2" for="search-equipment">Equipment</label>
+    <input class="mt-1 col-5" #searchEquipment id="search-equipment"/>
+    <button class="ml-2 bg-green text-white"
+            (click)="addEquipment(searchEquipment.value); searchEquipment.value = ''">Add</button>
+  </h3>
+
+  <button class="button" (click)="search()">
+    <img class="dropdown-toggle bg-style-2" src="assets/image/Icon/search.png" alt="Search">
+  </button>
+
+  <button *ngIf="ingredients.length != 0 || equipments.length != 0 || checkIfTypeIsUnchecked()" class="button"
+          (click)="removeAll()">
+    <img class="bg-style" src="assets/image/Icon/outline_clear_white_18dp.png" alt="Clear">
+  </button>
+</div>
+
+<div class="col-12">
+  <div class="d-flex flex-wrap justify-content-start" *ngIf="ingredients.length != 0">
+    <div *ngFor="let ingredient of ingredients">
+      <div class="bg-green m-1">{{ingredient}}
+        <button class="button" (click)="removeIngredient(ingredient)">
+          <img src="assets/image/Icon/baseline_clear_white_18dp.png" alt="Clear">
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-wrap justify-content-start" *ngIf="equipments.length != 0">
+    <div *ngFor="let equipment of equipments">
+      <div class="bg-orange m-1">{{equipment}}
+        <button class="button" (click)="removeEquipment(equipment)">
+          <img src="assets/image/Icon/baseline_clear_white_18dp.png" alt="Clear">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

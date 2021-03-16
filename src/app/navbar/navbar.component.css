@@ -1,0 +1,17 @@
+.bg-style {
+  background: rgba(207, 36, 10, 0.55);
+  color: white;
+}
+
+.bg-nav {
+  background-color: #4e2f2f;
+  border: 3px solid #A20505;
+  color: white;
+  width: auto;
+}
+
+.bg-nav-item {
+  background-color: #CF240A;
+  border: none;
+}
+

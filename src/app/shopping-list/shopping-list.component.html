@@ -1,0 +1,64 @@
+<div class="bgl-page">
+  <div class="container text-center py-5">
+    <p>shopping-list - {{date}}</p>
+    <div class="row">
+      <div class="col-4">
+        <p>Product DESCRIPTION</p>
+      </div>
+      <div class="col-2">
+        Amount
+      </div>
+      <div class="col-2">
+        Grammage
+      </div>
+      <div  class="col-4"> Add To List</div>
+    </div>
+    <div class="row" *ngFor="let product of toBeConfirmedProducts">
+      <div class="col-4 list-data">{{product.original}}</div>
+      <div class="col-2 list-data">{{product.measuresAmount}}</div>
+      <div class="col-2 list-data">{{product.measuresUnitShort}}</div>
+        <div class="col-4">
+          <button class="button" (click)="amountAddition(product.productId)">
+            <img src="assets/image/Icon/baseline_add_circle_outline_white_18dp.png" alt="Add amount">
+          </button>
+          <button class="button" (click)="amountDeletion(product.productId)">
+            <img src="assets/image/Icon/baseline_remove_circle_outline_white_18dp.png" alt="Remove amount">
+          </button>
+          <button class="button" (click)="productsApproval(product.productId)">
+            <img *ngIf="product.isChecked" src="assets/image/Icon/outline_check_white_18dp.png" alt="Checked">
+            <img *ngIf="!product.isChecked" src="assets/image/Icon/outline_disabled_by_default_white_18dp.png" alt="Not checked">
+          </button>
+        </div>
+    </div>
+
+    <div class="sum m-2"></div>
+
+    <div class="row">
+      <div class="col-12">Total amount: {{sumOfProductsPrice}}</div>
+    </div>
+    <div>
+      <button class="button" (click)="addToDB(toBeConfirmedProducts)">
+      <img src="assets/image/Icon/outline_email_white_18dp.png" alt="to-pdf">
+      </button>
+    </div>
+    <div *ngFor="let userList of userLists">
+      <div class="sum m-2">
+      </div>
+         <button class="button" (click)="uploadContent(userList)">
+         <div style="color: #0dcaf0" > {{userList}} </div>
+         </button>
+          <div *ngIf="chosenListProducts.length>0 && chosenListProducts[0].date == userList">
+            <div class="row" *ngFor="let product of chosenListProducts">
+              <div class="col-5 list-data">{{product.original}}</div>
+              <div class="col-4 list-data">{{product.measuresAmount}}</div>
+              <div class="col-3 list-data">{{product.measuresUnitShort}}</div>
+            </div>
+            <div class="mt-3">
+              <button class="button" (click)="printPDF(userList)">
+                <img src="assets/image/Icon/outline_picture_as_pdf_white_18dp.png" alt="to-pdf">
+              </button>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>

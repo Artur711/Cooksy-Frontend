@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row d-flex justify-content-end mb-3">
+    <button class="button" (click)="mark()">
+      <img *ngIf="!isFavorite" src="assets/image/Icon/star.png" alt="Star">
+      <img *ngIf="isFavorite" src="assets/image/Icon/fill_star.png" alt="Fill Star">
+    </button>
+    <button class="button" (click)="goBack()">
+      <img src="assets/image/Icon/baseline_reply_white_18dp.png" alt="Arrow">
+    </button>
+  </div>
+  <div *ngIf="details$" class="row">
+    <div class="co-12 col-lg-6">
+      <div class="row d-flex justify-content-center">
+        <div class="col-12 col-lg-8 mb-3">
+          <img class="img-fluid img-border" src="{{details$.image}}" alt="Recipe picture">
+        </div>
+      </div>
+      <div class="bg-style p-3">
+        <div class="row">
+          <div class="col-12">
+            <div class="custom-control custom-checkbox" *ngFor="let product of details$.products">
+              <input type="checkbox" class="custom-control-input mx-1" [(ngModel)]="product.isChecked"
+                     id="{{product.name}}">
+              <label class="custom-control-label d-flex justify-content-between" for="{{product.name}}">
+                <span>{{product.name}}  </span>
+                <span>{{product.measuresAmount}} {{product.measuresUnitShort}}</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-12 mt-3">
+            <div class="sum d-flex justify-content-end">
+              Price per serving: {{details$.pricePerServing | number : '1.2-2'}}$
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6">
+      <div class="bg-style py-2">
+        <h2>{{details$.tittle}}</h2>
+        <p><img src="assets/image/Icon/time.png" alt="Time in minutes"></p>
+        <h3>{{details$.readyInMinutes}} minutes</h3>
+        <p><strong>Description:</strong></p>
+        <p>{{details$.description}}</p>
+        <p>Source: <a href="{{details$.sourceUrl}}">{{details$.sourceUrl}}</a></p>
+        <div class="mt-5">
+          <img class="col-2 col-sm-1 img-fluid d-block m-auto"
+               src="assets/image/Icon/add_shopping_cart.png" alt="Shopping cart">
+          <button class="col-2 col-sm-1 img-fluid d-block m-auto button"
+                  (click)="addRecipeToList(); goBack()">
+            <img src="assets/image/Icon/add_shopping_cart.png" alt="Shopping cart">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

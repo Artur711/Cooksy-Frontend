@@ -1,0 +1,35 @@
+<div class="navbar navbar-expand-lg col= z-1">
+  <div class="container-fluid">
+    <button class="navbar-toggler navbar-dark bg-style p-2 mr-auto" type="button" aria-label="Toggle navigation"
+            (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse bg-nav" id="navbar" [ngbCollapse]="isCollapsed" >
+      <div class="navbar-nav">
+        <nav class="text-lg-start col d-block">
+          <br>
+          <a routerLink="home" (click)="onNavItemClick('Home')">
+            <div class="bg-nav-item col p-3"><strong class="text-white">HOME</strong></div>
+          </a>
+          <br>
+          <a routerLink="recipes" (click)="onNavItemClick('All Recipes')">
+            <div class="bg-nav-item col p-3"><strong class="text-white">ALL RECIPES</strong></div>
+          </a>
+          <br>
+          <a routerLink="shopping-lists" (click)="onNavItemClick('Shopping lists')">
+            <div class="bg-nav-item col p-3"><strong class="text-white">SHOPPING LISTS</strong></div>
+          </a>
+          <br>
+          <a routerLink="favorites" (click)="onNavItemClick('Favorite recipes')">
+            <div class="bg-nav-item col p-3"><strong class="text-white">FAVORITE RECIPES</strong></div>
+          </a>
+          <br>
+          <a routerLink="setting" (click)="onNavItemClick('Account Setting')">
+            <div class="bg-nav-item col p-3"><strong class="text-white">ACCOUNT SETTING</strong></div>
+          </a>
+          <br>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="justify-content-around">
+  <app-select (onSelectChange)="onSelectChange($event)"></app-select>
+</div>
+<div class="col-1-4 d-flex important! justify-content-center flex-wrap mt-2">
+  <a *ngFor="let recipe of recipes | paginate: { id: 'listing_pagination',
+      itemsPerPage: 10,
+      currentPage: page,
+      totalItems: pages * 10 }"
+     routerLink="detail/{{recipe.id}}">
+    <div class="bg-style item m-2">
+      <img class="img-thumbnail d-block m-auto" src="{{recipe.imageUrl}}" alt="Recipe">
+      <span><strong class="text-white">{{ recipe.name }}</strong></span>
+    </div>
+  </a>
+</div>
+<div class="row justify-content-center my-3">
+  <pagination-controls id="listing_pagination" (pageChange)="page = $event" (click)="getPage()"></pagination-controls>
+</div>
+
+

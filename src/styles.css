@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.item {
+  width: 8vw;
+}
+
+.image {
+  max-height: 8vh;
+}
+
+.button {
+  background: none;
+  border: none;
+}
+
+span, a {
+  color: snow !important;
+}
+
+@media screen and (max-width: 1581px) {
+  .item {
+    width: 9vw;
+  }
+
+  .image {
+    max-height: 9vw;
+  }
+}
+
+@media screen and (max-width: 1485px) {
+  .item {
+    width: 10vw;
+  }
+
+  .image {
+    max-height: 10vw;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .item {
+    width: 13vw;
+  }
+
+  .image {
+    max-height: 13vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .item {
+    width: 16vw;
+  }
+
+  .image {
+    max-height: 16vw;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .item {
+    width: 50vw;
+  }
+
+  .image {
+    max-height: 50vw;
+  }
+}

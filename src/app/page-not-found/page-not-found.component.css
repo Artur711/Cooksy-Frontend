@@ -1,0 +1,21 @@
+.bg-page {
+  min-height: 100vh;
+  height: auto;
+  background-image: url('src/assets/image/manu_background.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bg-style {
+  background: rgba(207, 36, 10, 0.55);
+  color: white;
+}
+
+h2 {
+  font-size: 300%;
+}
+
+h3 {
+  font-size: 200%;
+}
