@@ -4,7 +4,7 @@ import {Observable, of} from "rxjs";
 import {catchError, mapTo, tap} from "rxjs/operators";
 import {LoginData} from "../models/loginData";
 import {environment} from "../../environments/environment";
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +22,8 @@ export class AuthService {
       .pipe(
       mapTo(true),
           catchError(error => {
-            swal("Oops!", "Username or email already in use.", "error");
+            alert("Oops!, Username or email already in use.");
+//             swal("Oops!", "Username or email already in use.", "error");
             // alert('Username or email already in use.');
             return of(false);
           }));
@@ -34,7 +35,8 @@ export class AuthService {
         tap((data: LoginData) => this.doLoginUser(data.username, data.token, data.userId)),
         mapTo(true),
         catchError(error => {
-          swal("Oops!", "Incorrect login details.", "error");
+//           swal("Oops!", "Incorrect login details.", "error");
+          alert("Oops!, Incorrect login details.");
           // alert('Incorrect login details.');
           return of(false);
         }));

@@ -3,7 +3,7 @@ import {FormBuilder} from '@angular/forms';
 import {AuthService} from "../services/auth.service";
 import {Router} from "@angular/router";
 import {Location} from "@angular/common";
-import swal from "sweetalert";
+// import swal from "sweetalert";
 
 @Component({
   selector: 'app-login',
@@ -30,7 +30,8 @@ export class LoginComponent {
       })
       .subscribe(success => {
         if (success) {
-          swal("Yupii!", "Login are successful!", "success");
+          alert("Yupii!, Login are successful!")
+//           swal("Yupii!", "Login are successful!", "success");
           this.router.navigate(['/menu/home']);
         }
       })
