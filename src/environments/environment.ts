@@ -3,10 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  apiUrlHost: 'http://localhost:8080',
-  apiUrl: 'http://localhost:8080/api/v1',
-  apiRecipeUrl: 'http://localhost:8080',
+  production: true,
+  apiUrlHost: 'https://cooksy-api.herokuapp.com',
+  apiUrl: 'https://cooksy-api.herokuapp.com/api/v1',
+  apiRecipeUrl: 'https://cooksy-api.herokuapp.com',
 };
 
 /*
