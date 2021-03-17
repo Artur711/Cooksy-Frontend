@@ -62,8 +62,6 @@ export class AuthService {
   }
 
   private doLoginUser(username: string, token: string, userId: number) {
-    console.log(username + " username")
-    console.log(userId + " userId")
     localStorage.setItem("isLogged", "true");
     this.loggedUser = username;
     this.storeToken(token);
