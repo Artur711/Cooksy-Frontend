@@ -10,7 +10,7 @@ import {catchError, mapTo} from "rxjs/operators";
   providedIn: 'root'
 })
 export class ShoppingListService {
-  private apiRecipeUrl = `${environment.apiRecipeUrl}/shopping-list`
+  private apiRecipeUrl = `${environment.apiUrlHost}/shopping-list`
   products = new BehaviorSubject<RecipeProduct[]>([]);
   currentProducts = this.products.asObservable();
 
@@ -19,18 +19,10 @@ export class ShoppingListService {
 
   create():HttpHeaders {
     const token = localStorage.getItem('JWT_TOKEN');
-    // console.log(token)
     let httpHeaders = new HttpHeaders() ;
     if (token != null) {
       httpHeaders.set('Authorization', 'Bearer ' + token)
     }
-    // console.log(httpHeaders)
-
-    // const headerss = new Headers({
-    //   'Authorization': `Bearer ${token}`})
-    // console.log(headerss.get('Authorization'))
-    // console.log('-------------------')
-    // return headerss;
     return httpHeaders
   }
 

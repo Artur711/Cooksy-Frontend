@@ -11,7 +11,7 @@ import {environment} from "../../environments/environment";
 })
 export class AuthService {
 
-  private readonly JWT_TOKEN = 'JWT_TOKEN';
+  private JWT_TOKEN = '';
   private loggedUser!: string;
   private userId!: number;
 
@@ -80,7 +80,7 @@ export class AuthService {
   }
 
   private removeToken() {
-    localStorage.removeItem(this.JWT_TOKEN);
+    localStorage.removeItem(this.JWT_TOKEN = '');
   }
 
   public getLoggedUser() {

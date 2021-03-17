@@ -2,7 +2,6 @@ import { Component} from '@angular/core';
 import {AbstractControl, FormBuilder, ValidationErrors, ValidatorFn, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {AuthService} from "../services/auth.service";
-import {HttpClient} from "@angular/common/http";
 import {Location} from "@angular/common";
 // import swal from "sweetalert";
 
