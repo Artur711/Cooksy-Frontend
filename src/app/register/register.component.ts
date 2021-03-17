@@ -41,7 +41,7 @@ export class RegisterComponent{
       })
       .subscribe(success => {
         if (success) {
-            alert("Yupii!, Register are successful!");
+            alert("Yupii! Register are successful!");
 //             swal("Yupii!", "Register are successful!", "success");
           this.router.navigate(['/login']);
         }

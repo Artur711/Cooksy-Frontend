@@ -30,7 +30,7 @@ export class LoginComponent {
       })
       .subscribe(success => {
         if (success) {
-          alert("Yupii!, Login are successful!")
+          alert("Yupii! Login are successful!")
 //           swal("Yupii!", "Login are successful!", "success");
           this.router.navigate(['/menu/home']);
         }

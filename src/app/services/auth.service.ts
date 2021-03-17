@@ -22,7 +22,7 @@ export class AuthService {
       .pipe(
       mapTo(true),
           catchError(error => {
-            alert("Oops!, Username or email already in use.");
+            alert("Oops! Username or email already in use.");
 //             swal("Oops!", "Username or email already in use.", "error");
             // alert('Username or email already in use.');
             return of(false);
@@ -36,7 +36,7 @@ export class AuthService {
         mapTo(true),
         catchError(error => {
 //           swal("Oops!", "Incorrect login details.", "error");
-          alert("Oops!, Incorrect login details.");
+          alert("Oops! Incorrect login details.");
           // alert('Incorrect login details.');
           return of(false);
         }));
