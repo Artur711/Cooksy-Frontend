@@ -55,7 +55,7 @@ export class ShoppingListComponent implements OnInit {
   addToDB(ultimateProducts: RecipeProduct[]) {
     this.shpListService.addRecipe(ultimateProducts.filter(product => product.isChecked), this.date).subscribe();
     this.toBeConfirmedProducts.length = 0;
-
+    window.location.reload();
   }
 
   uploadContent(userList: any) {
