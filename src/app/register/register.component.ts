@@ -3,8 +3,6 @@ import {AbstractControl, FormBuilder, ValidationErrors, ValidatorFn, Validators}
 import {Router} from "@angular/router";
 import {AuthService} from "../services/auth.service";
 import {Location} from "@angular/common";
-import swal from "sweetalert";
-
 
 @Component({
   selector: 'app-register',
@@ -41,7 +39,7 @@ export class RegisterComponent{
       })
       .subscribe(success => {
         if (success) {
-          swal("Yupii!", "Register are successful!", "success");
+          alert("Yupii! Register are successful!");
           this.router.navigate(['/login']);
         }
       })
