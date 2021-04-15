@@ -13,6 +13,7 @@ import {MenuComponent} from "./menu/menu.component";
 import {AlwaysAuthGuard} from "./guards/always-auth.guard";
 
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import {SettingComponent} from "./setting/setting.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/cooksy', pathMatch: 'full'},
@@ -28,7 +29,7 @@ const routes: Routes = [
     { path: 'shopping-lists', component: ShoppingListComponent, canActivate: [AuthGuard]},
     { path: 'favorites', component: FavoritesComponent, canActivate: [AuthGuard]},
     { path: 'favorites/detail/:id', component: RecipeDetailsComponent, canActivate: [AuthGuard]},
-    // { path: 'setting', component: HomeComponent, canActivate: [AuthGuard]}
+    { path: 'setting', component: SettingComponent, canActivate: [AuthGuard]}
     ]},
   { path: '**', component: PageNotFoundComponent}
 ];

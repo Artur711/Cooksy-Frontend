@@ -6,7 +6,7 @@ export interface LoginDto {
 }
 
 export interface UserDto {
-
+  username: string;
   userId: number;
   nick: string;
   firstName: string;

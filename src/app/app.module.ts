@@ -28,7 +28,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {AuthInterceptor} from "./auth.interceptor";
-
+import {SettingComponent} from './setting/setting.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,8 @@ import {AuthInterceptor} from "./auth.interceptor";
     RegisterComponent,
     HomeComponent,
     FavoritesComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SettingComponent
   ],
   imports: [
     BrowserModule,

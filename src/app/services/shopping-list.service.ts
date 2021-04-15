@@ -39,7 +39,6 @@ export class ShoppingListService {
   addRecipe(products: RecipeProduct[], date: string) {
     const url = `${this.apiRecipeUrl}/add-to-list`;
     const myPostBody = {productDtos: products, date: date}
-    // let headers = this.create();
     return this.http.post<RecipeProduct[]>(url, myPostBody).pipe(mapTo(true),
       catchError(error => {
         console.log(error.error);
